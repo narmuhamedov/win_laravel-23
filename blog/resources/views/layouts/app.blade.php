@@ -9,6 +9,8 @@
 </head>
 <body>
 
+@include('inc.messages')
+
 @include('inc.header')
 
 @yield('content')

@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Главная</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"> 
                     <a class="nav-link" href="{{ route('contact') }}">Контакты</a>
                 </li>
 
