@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Все сообщения</a>
+                    <a class="nav-link" href="{{route('contact-data')}}">Все сообщения</a>
                 </li>
 
             </ul>

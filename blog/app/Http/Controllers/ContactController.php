@@ -21,8 +21,23 @@ class ContactController extends Controller
         //     'message'=>'required|min:15|max:500'
 
         // ]);
-        
-        
 
     }
+
+
+    public function allData(){
+        #$contact = new Contact;
+        #return view('messages', ['data'=> $contact->inRandomOrder()->get()]);
+        return view('message', ['data'=>Contact::all()]);
+        // $contact = new Contact;
+        // dd($contact->all());
+    }
+
+
+    public function detailMessage($id){
+        $contact = new Contact;
+        return view('detail-message',['data'=>$contact->find($id)]);
+     }
+     
+
 }
