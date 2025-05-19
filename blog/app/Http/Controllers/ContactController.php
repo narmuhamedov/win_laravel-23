@@ -38,6 +38,33 @@ class ContactController extends Controller
         $contact = new Contact;
         return view('detail-message',['data'=>$contact->find($id)]);
      }
+
+
+     public function updateMessage($id){
+        $contact = new Contact;
+        return view('update-message', ['data'=>$contact->find($id)]);
+     }
      
 
+     public function updateMessageSubmit($id, ContactRequest $req){
+
+        $contact =  Contact::find($id);
+        $contact->name = $req->input('name');
+        $contact->email = $req->input('email');
+        $contact->subject = $req->input('subject');
+        $contact->message = $req->input('message');
+     
+        $contact->save();
+     
+        //Переадресация на главную страницу после изменения данных
+        return redirect()->route('contact-detail-one', $id)->with('success', 'Успешно обновлено');
+     
+     }
+
+     public function deleteMessage($id){
+        Contact::find($id)->delete();
+        return redirect()->route('contact-data')->with('success', 'Успешно удалено');
+     }
+     
+     
 }
